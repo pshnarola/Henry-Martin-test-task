@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-container {
+    height: 600px;
+    width: 100%;
+}
+
+.leaflet-div-icon {
+    background: transparent;
+    border: none;
+}
+
+.activeMe {
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
