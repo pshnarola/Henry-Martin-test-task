@@ -17,13 +17,13 @@ It has a great line chart and Map Module to represent covid 19 data.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/pshnarola/Henry-Martin-test-task
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd Henry-Martin-test-task
 ```
 
 Install dependencies
