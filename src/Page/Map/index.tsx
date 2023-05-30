@@ -3,7 +3,26 @@ import { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { v4 as uuidv4 } from 'uuid';
+
+import icon from 'leaflet/dist/images/marker-icon.png'
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
+import iconShadow from 'leaflet/dist/images/marker-shadow.png'
+import L from 'leaflet'
+
 import 'leaflet/dist/leaflet.css';
+
+let DefaultIcon = L.icon({
+    iconUrl: icon,
+    iconRetinaUrl: iconRetinaUrl,
+    shadowUrl: iconShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41]
+})
+
+L.Marker.prototype.options.icon = DefaultIcon
 
 type Tinfo = {
     countryName: string,
@@ -55,7 +74,6 @@ const Map = (): JSX.Element => {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     {makerList?.map((item: any) =>
-
                         <Marker key={item?.id} position={item?.position}>
                             <Popup>
                                 <p><span className='font-bold'>Country :</span> {item?.info?.countryName}</p>

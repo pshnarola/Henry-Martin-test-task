@@ -13,12 +13,14 @@ import Details from "./Page/Contact/Details";
 
 const queryClient = new QueryClient();
 
+const basePath = process.env.NODE_ENV === 'production' ? '/js/henry-martin/' : ""
+
 function App() {
 	return (
 		<div className="App">
 			<QueryClientProvider client={queryClient}>
 				<Provider store={store}>
-					<Router>
+					<Router basename={basePath}>
 						<Layout>
 							<Routes>
 								<Route path="/" element={<Dashboard />} />
@@ -31,7 +33,7 @@ function App() {
 					</Router>
 				</Provider>
 			</QueryClientProvider>
-		</div>
+		</div >
 	)
 }
 
